@@ -32,6 +32,8 @@ Zamknięcie popupu kliknięciem poza nim nie zatwierdza formularza i nie zamyka 
 
 Ten sam pełny URL oznacza jeden rekord: tagi są łączone bez rozróżniania wielkości liter, a zatwierdzony opis, ważność i intencja zastępują poprzednie wartości. Parametry, fragment `#`, subdomena oraz końcowy ukośnik są częścią URL i nie są normalizowane.
 
+Intencje `remember`, `summarize` i `research` są zapisywane w JSON. W tej wersji żadna z nich nie uruchamia AI ani researchu automatycznie.
+
 ## Niezawodność i ograniczenia
 
 - Worker utrzymuje jedną kolejkę operacji, aby dwie migawki nie nadpisały się równolegle.

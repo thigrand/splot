@@ -56,7 +56,7 @@ export function validateSubmission(values) {
   if (!['important', 'less_important'].includes(values.importance)) {
     throw new Error('Wybierz poprawną wartość ważności.');
   }
-  if (!['remember', 'summarize'].includes(values.intent)) {
+  if (!['remember', 'summarize', 'research'].includes(values.intent)) {
     throw new Error('Wybierz poprawny tryb.');
   }
 

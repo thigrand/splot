@@ -45,6 +45,9 @@ test('waliduje granice opisu, tagów i enumów', () => {
   assert.throws(() => validateSubmission({
     url: 'https://example.org', description: '', tags: '', importance: 'important', intent: 'other'
   }), /tryb/);
+  assert.equal(validateSubmission({
+    url: 'https://example.org', description: '', tags: '', importance: 'important', intent: 'research'
+  }).intent, 'research');
 });
 
 test('scalenie zastępuje zatwierdzone pola, łączy tagi i nie zmienia daty bez zmiany', () => {

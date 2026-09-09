@@ -5,7 +5,7 @@
 - [x] Sprawdzić ograniczenia Chrome dotyczące `activeTab`, Downloads API, Storage API, popupu i kart.
 - [x] Zapisać ustalenia w `USTALENIA.md`.
 - [x] Ujednolicić wykonawczy plan MVP oraz plan dalszych warstw w `PLAN.md`.
-- [x] Zweryfikować przykładowy JSON i usunąć odrzucone warianty: ręczny eksport, listę kolekcji, pobieranie treści, zaznaczony tekst i „research”.
+- [x] Zweryfikować przykładowy JSON i usunąć odrzucone warianty: ręczny eksport, listę kolekcji, pobieranie treści i zaznaczony tekst; `research` został później dodany jako trzecia intencja zapisywana lokalnie, bez AI.
 
 ## Wynik
 

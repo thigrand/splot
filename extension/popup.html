@@ -9,7 +9,7 @@
   <body>
     <main>
       <header>
-        <span class="mark" aria-hidden="true">S</span>
+        <img class="mark" src="icons/splot.svg" alt="">
         <h1>Splot</h1>
       </header>
       <p id="source" class="source" aria-live="polite">Przygotowuję zapis…</p>
@@ -25,9 +25,10 @@
           <label class="choice"><input type="radio" name="importance" value="less_important"><span>Mniej ważne</span></label>
         </div>
 
-        <div class="choices" role="radiogroup" aria-label="Intencja dla materiału">
+        <div class="choices intent-choices" role="radiogroup" aria-label="Intencja dla materiału">
           <label class="choice"><input type="radio" name="intent" value="remember" checked><span>Zapamiętaj</span></label>
           <label class="choice"><input type="radio" name="intent" value="summarize"><span>Podsumuj</span></label>
+          <label class="choice"><input type="radio" name="intent" value="research"><span>Research</span></label>
         </div>
 
         <p id="status" class="status" aria-live="polite"></p>

@@ -28,7 +28,7 @@ async function initialize() {
     form.tags.value = record.tags.join(', ');
     form.elements.importance.value = record.importance;
     form.elements.intent.value = record.intent;
-    setStatus(response.persisted ? '' : 'Nie udało się zapisać linku. Użyj przycisku poniżej, aby ponowić próbę.');
+    setStatus('');
   } catch (error) {
     setStatus(error.message, true);
     saveButton.disabled = true;

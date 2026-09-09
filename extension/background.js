@@ -7,7 +7,7 @@ import {
 } from './material.js';
 
 const STATE_KEY = 'splotState';
-const DOWNLOAD_FILENAME = 'agregator/materialy.json';
+const DOWNLOAD_FILENAME = 'splot-materials.json';
 
 function initialState() {
   return { records: [], revision: 0, lastCompletedRevision: 0, pending: null, lastError: null };
@@ -63,9 +63,8 @@ export class SaveCoordinator {
         this.state.records.push(record);
         this.state.revision += 1;
         await this.persist();
-        await this.writeSnapshot();
       }
-      return { record, persisted: this.state.lastCompletedRevision >= this.state.revision };
+      return { record };
     });
   }
 

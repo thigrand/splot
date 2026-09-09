@@ -5,6 +5,7 @@ coverage/
 !.env.example
 agregator/materialy.json
 agregator/*.json
+/splot-materials.json
 browser-profile/
 test-results/
 *.log

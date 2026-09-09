@@ -28,18 +28,17 @@ function createApi({ terminal = 'complete' } = {}) {
   };
 }
 
-test('wstępny zapis pobiera pełną migawkę do wymaganej ścieżki', async () => {
+test('wstępny zapis pozostaje w pamięci bez pobierania pliku', async () => {
   const fake = createApi();
   const coordinator = new SaveCoordinator({
     storage: fake.storage, downloads: fake.downloadsApi, createBlob: fake.createBlob,
     releaseBlob: fake.releaseBlob, tabs: fake.tabs
   });
   const result = await coordinator.createDraft({ id: 7, url: 'https://example.org/a', title: 'Test' });
-  assert.equal(result.persisted, true);
-  assert.equal(fake.downloads[0].filename, 'agregator/materialy.json');
-  assert.equal(fake.downloads[0].conflictAction, 'overwrite');
-  assert.equal(fake.downloads[0].saveAs, false);
-  assert.equal(fake.data.splotState.lastCompletedRevision, 1);
+  assert.equal(result.record.url, 'https://example.org/a');
+  assert.equal(fake.downloads.length, 0);
+  assert.equal(fake.data.splotState.records.length, 1);
+  assert.equal(fake.data.splotState.lastCompletedRevision, 0);
 });
 
 test('zatwierdzenie zapisuje przed zamknięciem tylko zgodnej karty', async () => {
@@ -53,20 +52,49 @@ test('zatwierdzenie zapisuje przed zamknięciem tylko zgodnej karty', async () =
     tabId: 7, sourceUrl: 'https://example.org/a', description: 'opis', tags: 'Dzieci',
     importance: 'less_important', intent: 'summarize'
   });
-  assert.equal(fake.downloads.length, 2);
+  assert.equal(fake.downloads.length, 1);
+  assert.equal(fake.downloads[0].filename, 'splot-materials.json');
+  assert.equal(fake.downloads[0].conflictAction, 'overwrite');
+  assert.equal(fake.downloads[0].saveAs, false);
   assert.deepEqual(fake.closed, [7]);
   assert.equal(fake.data.splotState.records[0].description, 'opis');
 });
 
-test('przerwany zapis nie zamyka karty i pozwala kolejce przyjąć kolejną operację', async () => {
+test('kolejne zatwierdzenie nadpisuje ten sam plik z uaktualnionymi danymi', async () => {
+  const fake = createApi();
+  const coordinator = new SaveCoordinator({
+    storage: fake.storage, downloads: fake.downloadsApi, createBlob: fake.createBlob,
+    releaseBlob: fake.releaseBlob, tabs: fake.tabs
+  });
+  await coordinator.createDraft({ id: 7, url: 'https://example.org/a', title: 'Test' });
+  await coordinator.submitAndClose({
+    tabId: 7, sourceUrl: 'https://example.org/a', description: 'pierwszy opis', tags: '',
+    importance: 'important', intent: 'remember'
+  });
+  await coordinator.submitAndClose({
+    tabId: 7, sourceUrl: 'https://example.org/a', description: 'nowszy opis', tags: 'Ważne',
+    importance: 'less_important', intent: 'research'
+  });
+  assert.equal(fake.downloads.length, 2);
+  assert.ok(fake.downloads.every(({ filename, conflictAction }) =>
+    filename === 'splot-materials.json' && conflictAction === 'overwrite'
+  ));
+  assert.equal(fake.data.splotState.records[0].description, 'nowszy opis');
+});
+
+test('przerwany zatwierdzony zapis nie zamyka karty, a wstępne rekordy pozostają dostępne', async () => {
   const fake = createApi({ terminal: 'interrupted' });
   const coordinator = new SaveCoordinator({
     storage: fake.storage, downloads: fake.downloadsApi, createBlob: fake.createBlob,
     releaseBlob: fake.releaseBlob, tabs: fake.tabs
   });
-  await assert.rejects(coordinator.createDraft({ id: 7, url: 'https://example.org/a', title: 'Test' }), /Nie udało się/);
+  await coordinator.createDraft({ id: 7, url: 'https://example.org/a', title: 'Test' });
+  await assert.rejects(coordinator.submitAndClose({
+    tabId: 7, sourceUrl: 'https://example.org/a', description: '', tags: '',
+    importance: 'important', intent: 'remember'
+  }), /Nie udało się/);
   assert.deepEqual(fake.closed, []);
-  await assert.rejects(coordinator.createDraft({ id: 8, url: 'https://example.org/b', title: 'Drugi' }), /Nie udało się/);
+  await coordinator.createDraft({ id: 8, url: 'https://example.org/b', title: 'Drugi' });
   assert.equal(fake.data.splotState.records.length, 2);
 });
 

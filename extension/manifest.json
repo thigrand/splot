@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Splot — zapisz i zamknij",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Zapisuje link i własny kontekst do lokalnego pliku JSON, a następnie bezpiecznie zamyka kartę.",
   "minimum_chrome_version": "116",
   "incognito": "not_allowed",

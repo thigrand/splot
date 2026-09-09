@@ -8,4 +8,5 @@ agregator/*.json
 browser-profile/
 test-results/
 *.log
-/Raport z dyskusji AI/
+/Raporty/
+/tasks/

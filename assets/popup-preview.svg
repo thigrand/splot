@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="608" viewBox="0 0 360 304" role="img" aria-labelledby="title description">
+  <title id="title">Podgląd popupu rozszerzenia Splot</title>
+  <desc id="description">Ciemny, kompaktowy formularz Splot z pomarańczową ikoną splecionych linków i trzema intencjami.</desc>
+  <rect width="360" height="304" rx="12" fill="#171719"/>
+  <g transform="translate(16 16)">
+    <g transform="translate(2 1) scale(.34)">
+      <path d="M27 18 17 28a11 11 0 0 0 16 16l5-5" fill="none" stroke="#fb923c" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"/>
+      <path d="m37 46 10-10a11 11 0 0 0-16-16l-5 5" fill="none" stroke="#f97316" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"/>
+      <path d="m25 39 14-14" fill="none" stroke="#fed7aa" stroke-linecap="round" stroke-width="7"/>
+    </g>
+    <text x="37" y="20" fill="#f6f4f8" font-family="Arial, sans-serif" font-size="18" font-weight="700">Splot</text>
+    <rect x="0" y="38" width="328" height="58" rx="8" fill="#242328" stroke="#4a4652"/>
+    <text x="11" y="61" fill="#a8a3ae" font-family="Arial, sans-serif" font-size="14">Dodaj opis (opcjonalnie)</text>
+    <rect x="0" y="104" width="328" height="36" rx="8" fill="#242328" stroke="#4a4652"/>
+    <text x="11" y="127" fill="#a8a3ae" font-family="Arial, sans-serif" font-size="14">Tagi, po przecinku</text>
+    <rect x="0" y="148" width="160" height="34" rx="8" fill="#4a2d12" stroke="#fb923c"/>
+    <text x="80" y="170" fill="#fff" font-family="Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Ważne</text>
+    <rect x="168" y="148" width="160" height="34" rx="8" fill="#242328" stroke="#4a4652"/>
+    <text x="248" y="170" fill="#c8c3d0" font-family="Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">Mniej ważne</text>
+    <rect x="0" y="190" width="104" height="34" rx="8" fill="#4a2d12" stroke="#fb923c"/>
+    <text x="52" y="212" fill="#fff" font-family="Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Zapamiętaj</text>
+    <rect x="112" y="190" width="104" height="34" rx="8" fill="#242328" stroke="#4a4652"/>
+    <text x="164" y="212" fill="#c8c3d0" font-family="Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Podsumuj</text>
+    <rect x="224" y="190" width="104" height="34" rx="8" fill="#242328" stroke="#4a4652"/>
+    <text x="276" y="212" fill="#c8c3d0" font-family="Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">Research</text>
+    <rect x="0" y="236" width="328" height="36" rx="8" fill="#fb923c"/>
+    <text x="164" y="259" fill="#2e1605" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">Zapisz i zamknij kartę</text>
+  </g>
+</svg>

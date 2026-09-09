@@ -4,6 +4,8 @@ Pierwsza wersja rozszerzenia Manifest V3 dla wskazanej przez użytkownika przegl
 
 Nie ma tu konta, backendu, AI, pobierania treści, listy materiałów ani importu.
 
+![Podgląd popupu Splot](assets/popup-preview.png)
+
 ## Instalacja w Brave
 
 1. Otwórz w Brave adres `brave://extensions`.

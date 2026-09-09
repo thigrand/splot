@@ -21,7 +21,7 @@ Nie powstał kod rozszerzenia ani nie uruchomiono serwera. Testy produktu są za
 - [x] Ujednolicić nazwę roboczą Splot, nazwę rozszerzenia „Splot — zapisz i zamknij” oraz repo `thigrand/splot` w ustaleniach, planie i promptcie.
 - [x] Potwierdzić przez GitHub repo utworzone przez użytkownika: `https://github.com/thigrand/splot.git`, widoczność publiczna, domyślna gałąź `main`. Zastąpić tworzenie repo podłączeniem istniejącego remota.
 - [x] Poprawić zakres na Chromium; zachować techniczne nazwy API Chrome i wymagać testów w przeglądarce użytkownika.
-- [ ] Ustalić konkretną przeglądarkę użytkownika jako podstawowe środowisko odbioru.
+- [x] Ustalić konkretną przeglądarkę użytkownika jako podstawowe środowisko odbioru: Brave (najnowsza wersja wskazana przez użytkownika).
 - [x] Zapisać oraz sprawdzić prompt dla nowej sesji Terry w PROMPT_DLA_TERRY.md.
 
 Sprawdzenie: przykład kolekcji i pełny przykład manifestu parsują się jako JSON; manifest zawiera wymagane name/version i offscreen. Plan zawiera 17 scenariuszy. Nazwa oraz widoczność repo są zgodne w planie, ustaleniach i promptcie. Dokumentację Chrome Offscreen API zweryfikowano w oficjalnym źródle; testy samego rozszerzenia nadal wymagają implementacji.
@@ -41,7 +41,7 @@ Repozytorium GitHub utworzył użytkownik. Przygotowanie lokalnego Git i remota,
 
 ## Wynik implementacji
 
-- Automatyczne testy (`npm test`): 9/9 zaliczonych.
+- Automatyczne testy (`npm test`): 10/10 zaliczonych.
 - Parsowanie manifestu i kontrola składni modułów: zaliczone.
-- Testy odbioru w przeglądarce użytkownika: oczekują na wskazanie jej nazwy i wersji. Nie wykonano testów na rzeczywistych kartach użytkownika ani w Google Chrome.
+- Testy odbioru w Brave: niewykonane. Sesja automatyzacji nie udostępnia okna ani karty Brave, więc nie da się bezpiecznie utworzyć kontrolowanych kart testowych. Nie wykonano testów na rzeczywistych kartach użytkownika ani w Google Chrome.
 - Git: `main` wysłane zwykłym pushem; zdalny SHA został zweryfikowany po wysłaniu.

@@ -4,13 +4,14 @@ Pierwsza wersja rozszerzenia Manifest V3 dla wskazanej przez użytkownika przegl
 
 Nie ma tu konta, backendu, AI, pobierania treści, listy materiałów ani importu.
 
-## Instalacja w przeglądarce Chromium
+## Instalacja w Brave
 
-1. Otwórz stronę rozszerzeń swojej przeglądarki i włącz tryb programisty.
-2. Wybierz opcję załadowania rozszerzenia rozpakowanego.
-3. Wskaż folder [`extension`](extension).
-4. Sprawdź komunikat o uprawnieniu do pobierania plików i zaakceptuj go, jeśli przeglądarka o to poprosi.
-5. W ustawieniach pobierania pozostaw automatyczne pobieranie (bez pytania o lokalizację), aby rozszerzenie mogło utworzyć plik bez okna dialogowego.
+1. Otwórz w Brave adres `brave://extensions`.
+2. Włącz **Tryb programisty** w prawym górnym rogu.
+3. Wybierz **Załaduj rozpakowane**.
+4. Wskaż folder [`extension`](extension).
+5. Sprawdź komunikat o uprawnieniu do pobierania plików i zaakceptuj go, jeśli przeglądarka o to poprosi.
+6. W ustawieniach pobierania pozostaw automatyczne pobieranie (bez pytania o lokalizację), aby rozszerzenie mogło utworzyć plik bez okna dialogowego.
 
 Rozszerzenie zapisuje plik względnie do folderu pobierania skonfigurowanego w przeglądarce:
 
@@ -54,4 +55,4 @@ Automatyczne testy logiki i kolejki:
 npm test
 ```
 
-Do odbioru ręcznego użyj testowego profilu przeglądarki oraz kontrolowanych kart, nie rzeczywistych kart ani prywatnego zbioru materiałów. Wyniki testów przeglądarkowych są zapisywane w [`tasks/todo.md`](tasks/todo.md).
+Do odbioru ręcznego w Brave użyj testowego profilu oraz kontrolowanych kart, nie rzeczywistych kart ani prywatnego zbioru materiałów. Wyniki testów przeglądarkowych są zapisywane w [`tasks/todo.md`](tasks/todo.md).

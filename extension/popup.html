@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Splot</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <h1>Splot</h1>
+      <p id="source" class="source" aria-live="polite">Przygotowuję zapis…</p>
+      <form id="form" novalidate>
+        <label for="description">Opis <span>(opcjonalnie)</span></label>
+        <textarea id="description" maxlength="4000" rows="4"></textarea>
+
+        <label for="tags">Tagi <span>(po przecinku, opcjonalnie)</span></label>
+        <input id="tags" type="text" maxlength="1829" autocomplete="off">
+
+        <fieldset>
+          <legend>Ważność</legend>
+          <label><input type="radio" name="importance" value="important" checked> Jest to dla mnie ważne</label>
+          <label><input type="radio" name="importance" value="less_important"> Mniej ważne</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Co zrobić później</legend>
+          <label><input type="radio" name="intent" value="remember" checked> Zapamiętaj</label>
+          <label><input type="radio" name="intent" value="summarize"> Podsumuj</label>
+        </fieldset>
+
+        <p id="status" class="status" aria-live="polite"></p>
+        <button id="save" type="submit">Zapisz i zamknij kartę</button>
+      </form>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+:root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+body { margin: 0; min-width: 330px; }
+main { padding: 16px; }
+h1 { font-size: 1.2rem; margin: 0 0 8px; }
+.source { font-size: .85rem; margin: 0 0 16px; overflow-wrap: anywhere; }
+label, textarea, input { display: block; width: 100%; box-sizing: border-box; }
+label { font-weight: 600; margin: 12px 0 5px; }
+label span { font-weight: 400; }
+fieldset { border: 0; margin: 14px 0; padding: 0; }
+fieldset label { font-weight: 400; margin: 7px 0; }
+fieldset input { display: inline; width: auto; }
+.status { min-height: 1.3em; font-size: .9rem; }
+.error { color: #b42318; }
+button { width: 100%; padding: 10px; font-weight: 700; }

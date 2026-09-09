@@ -4,6 +4,8 @@ Pierwsza wersja rozszerzenia Manifest V3 dla wskazanej przez użytkownika przegl
 
 Nie ma tu konta, backendu, AI, pobierania treści, listy materiałów ani importu.
 
+Aktualna wersja: **0.2.0**. Splot stosuje [Semantic Versioning](https://semver.org/lang/pl/): przed wersją 1.0 nowa widoczna funkcja podnosi drugi numer (`0.2.0`), a poprawka bez zmiany zachowania — trzeci (`0.2.1`).
+
 ![Podgląd popupu Splot](assets/popup-preview.png)
 
 ## Instalacja w Brave

@@ -1,5 +1,4 @@
 const form = document.querySelector('#form');
-const source = document.querySelector('#source');
 const status = document.querySelector('#status');
 const saveButton = document.querySelector('#save');
 let sourceTab;
@@ -25,7 +24,6 @@ async function initialize() {
   try {
     const response = await send('createDraft', { tab });
     const { record } = response;
-    source.textContent = record.title ? `${record.domain} — ${record.title}` : record.domain;
     form.description.value = record.description;
     form.tags.value = record.tags.join(', ');
     form.elements.importance.value = record.importance;

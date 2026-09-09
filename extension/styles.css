@@ -4,7 +4,6 @@ main { padding: 16px; }
 header { display: flex; align-items: center; gap: 9px; margin-bottom: 8px; }
 .mark { display: block; width: 27px; height: 27px; }
 h1 { margin: 0; font-size: 1.15rem; letter-spacing: -.02em; }
-.source { margin: 0 0 13px; color: #c8c3d0; font-size: .8rem; line-height: 1.35; overflow-wrap: anywhere; }
 textarea, input { display: block; width: 100%; box-sizing: border-box; border: 1px solid #4a4652; border-radius: 8px; background: #242328; color: inherit; font: inherit; }
 textarea { min-height: 58px; resize: vertical; padding: 9px 10px; }
 input[type="text"] { margin-top: 8px; padding: 9px 10px; }

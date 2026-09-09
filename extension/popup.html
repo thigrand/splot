@@ -8,26 +8,27 @@
   </head>
   <body>
     <main>
-      <h1>Splot</h1>
+      <header>
+        <span class="mark" aria-hidden="true">S</span>
+        <h1>Splot</h1>
+      </header>
       <p id="source" class="source" aria-live="polite">Przygotowuję zapis…</p>
       <form id="form" novalidate>
-        <label for="description">Opis <span>(opcjonalnie)</span></label>
-        <textarea id="description" maxlength="4000" rows="4"></textarea>
+        <label class="sr-only" for="description">Opis</label>
+        <textarea id="description" maxlength="4000" rows="3" placeholder="Dodaj opis (opcjonalnie)"></textarea>
 
-        <label for="tags">Tagi <span>(po przecinku, opcjonalnie)</span></label>
-        <input id="tags" type="text" maxlength="1829" autocomplete="off">
+        <label class="sr-only" for="tags">Tagi po przecinku</label>
+        <input id="tags" type="text" maxlength="1829" autocomplete="off" placeholder="Tagi, po przecinku">
 
-        <fieldset>
-          <legend>Ważność</legend>
-          <label><input type="radio" name="importance" value="important" checked> Jest to dla mnie ważne</label>
-          <label><input type="radio" name="importance" value="less_important"> Mniej ważne</label>
-        </fieldset>
+        <div class="choices" role="radiogroup" aria-label="Ważność materiału">
+          <label class="choice"><input type="radio" name="importance" value="important" checked><span>Ważne</span></label>
+          <label class="choice"><input type="radio" name="importance" value="less_important"><span>Mniej ważne</span></label>
+        </div>
 
-        <fieldset>
-          <legend>Co zrobić później</legend>
-          <label><input type="radio" name="intent" value="remember" checked> Zapamiętaj</label>
-          <label><input type="radio" name="intent" value="summarize"> Podsumuj</label>
-        </fieldset>
+        <div class="choices" role="radiogroup" aria-label="Intencja dla materiału">
+          <label class="choice"><input type="radio" name="intent" value="remember" checked><span>Zapamiętaj</span></label>
+          <label class="choice"><input type="radio" name="intent" value="summarize"><span>Podsumuj</span></label>
+        </div>
 
         <p id="status" class="status" aria-live="polite"></p>
         <button id="save" type="submit">Zapisz i zamknij kartę</button>

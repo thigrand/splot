@@ -37,10 +37,11 @@ Repozytorium GitHub utworzył użytkownik. Przygotowanie lokalnego Git i remota,
 - [x] Dodać popup z formularzem oraz bezpieczne zamknięcie właściwej karty po stanie `complete`.
 - [x] Napisać instrukcję instalacji, prywatności i ograniczeń.
 - [ ] Wykonać testy automatyczne oraz dostępne testy odbioru w wskazanej przeglądarce Chromium.
-- [ ] Sprawdzić diff pod kątem danych prywatnych, utworzyć commity i wykonać zwykły push na `main`.
+- [x] Sprawdzić diff pod kątem danych prywatnych, utworzyć commity i wykonać zwykły push na `main`.
 
 ## Wynik implementacji
 
 - Automatyczne testy (`npm test`): 9/9 zaliczonych.
 - Parsowanie manifestu i kontrola składni modułów: zaliczone.
 - Testy odbioru w przeglądarce użytkownika: oczekują na wskazanie jej nazwy i wersji. Nie wykonano testów na rzeczywistych kartach użytkownika ani w Google Chrome.
+- Git: `main` wysłane zwykłym pushem; zdalny SHA został zweryfikowany po wysłaniu.
